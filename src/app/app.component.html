@@ -2,7 +2,7 @@
 
 <div class="container-fluid br bl bb bt">
 
-  <div class="row">
+  <div class="is-table-row">
 
     <!-- Key partners -->
     <div class="col-md-3">
@@ -28,7 +28,7 @@
       
     </div>
     <!-- Value propositions -->
-    <div class="col-md-2">
+    <div class="col-md-2 br">
       
       <div>
         <app-bmcitemlist [name]="'Value Propositions'" [tasks]="canvasData.valuePropositions"></app-bmcitemlist>
@@ -38,12 +38,12 @@
     <!-- Customer Relationships & Channels -->
     <div class="col-md-2 br">
 
-      <div class="row bb bl">
+      <div class="row bb">
         <div class="col-xs-12">
             <app-bmcitemlist [name]="'Customer Relationships'" [tasks]="canvasData.customerRelationships"></app-bmcitemlist> 
         </div>
       </div>
-      <div class="row bl">
+      <div class="row ">
         <div class="col-xs-12">
           <app-bmcitemlist [name]="'Channels'" [tasks]="canvasData.channels"></app-bmcitemlist>
         </div>
@@ -60,7 +60,7 @@
     </div>
 
   </div>
-  <div class="row bt">
+  <div class="is-table-row bt">
 
     <!-- Cost structure -->
     <div class="col-md-6 br ">

@@ -13,3 +13,13 @@
 .bt {
     border-top: 1px solid #000;
 }
+
+.is-table-row {
+    display: table;
+    width: 100%;
+}
+.is-table-row [class*="col-"] {
+    float: none;
+    display: table-cell;
+    vertical-align: top;
+}
