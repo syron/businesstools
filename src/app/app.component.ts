@@ -25,14 +25,14 @@ export class AppComponent {
   }
 
   mockData() {
-    this.canvasData.channels = ['a', 'b'];
-    this.canvasData.costStructure = ['a', 'b'];
+    this.canvasData.channels = ['a', 'b', 'c'];
+    this.canvasData.costStructure = ['a'];
     this.canvasData.customerRelationships = ['a', 'b'];
-    this.canvasData.customerSegments = ['a', 'b'];
-    this.canvasData.keyActivities = ['a', 'b'];
-    this.canvasData.keyPartners = ['a', 'b'];
-    this.canvasData.keyResources = ['a', 'b'];
-    this.canvasData.revenueStreams = ['a', 'b'];
-    this.canvasData.valuePropositions = ['a', 'b'];
+    this.canvasData.customerSegments = ['a', 'b', 'c', 'd'];
+    this.canvasData.keyActivities = ['a', 'b', 'c'];
+    this.canvasData.keyPartners = ['a', 'b', 'c', 'd', 'e', 'f'];
+    this.canvasData.keyResources = ['a', 'b', 'c', 'd'];
+    this.canvasData.revenueStreams = ['a', 'b', 'c'];
+    this.canvasData.valuePropositions = ['a', 'b', 'c', 'd', 'e', 'f'];
   }
 }

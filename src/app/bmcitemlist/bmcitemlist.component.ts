@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class BmcitemlistComponent {
 
   @Input() name: string;
+  @Input() tasks: Array<string>;
 
   constructor() { }
 

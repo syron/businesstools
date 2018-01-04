@@ -1,3 +1,5 @@
+<h1>Business Model Canvas</h1>
+
 <div class="container-fluid br bl bb bt">
 
   <div class="row">
@@ -6,7 +8,7 @@
     <div class="col-md-3">
 
       <div>
-        <app-bmcitemlist [name]="'Key Partners'"></app-bmcitemlist>
+        <app-bmcitemlist [name]="'Key Partners'" [tasks]="canvasData.keyPartners"></app-bmcitemlist>
       </div>
 
     </div>
@@ -15,12 +17,12 @@
 
       <div class="row bb bl">
         <div class="col-xs-12">
-            <app-bmcitemlist [name]="'Key Activities'"></app-bmcitemlist>
+            <app-bmcitemlist [name]="'Key Activities'" [tasks]="canvasData.keyActivities"></app-bmcitemlist>
         </div>
       </div>
       <div class="row bl">
         <div class="col-xs-12">
-            <app-bmcitemlist [name]="'Key Resources'"></app-bmcitemlist>
+            <app-bmcitemlist [name]="'Key Resources'" [tasks]="canvasData.keyResources"></app-bmcitemlist>
         </div>
       </div>
       
@@ -29,7 +31,7 @@
     <div class="col-md-2">
       
       <div>
-        <app-bmcitemlist [name]="'Value Propositions'"></app-bmcitemlist>
+        <app-bmcitemlist [name]="'Value Propositions'" [tasks]="canvasData.valuePropositions"></app-bmcitemlist>
       </div>
 
     </div>
@@ -38,12 +40,12 @@
 
       <div class="row bb bl">
         <div class="col-xs-12">
-            <app-bmcitemlist [name]="'Customer Relationships'"></app-bmcitemlist> 
+            <app-bmcitemlist [name]="'Customer Relationships'" [tasks]="canvasData.customerRelationships"></app-bmcitemlist> 
         </div>
       </div>
       <div class="row bl">
         <div class="col-xs-12">
-          <app-bmcitemlist [name]="'Channels'"></app-bmcitemlist>
+          <app-bmcitemlist [name]="'Channels'" [tasks]="canvasData.channels"></app-bmcitemlist>
         </div>
       </div>
 
@@ -52,7 +54,7 @@
     <div class="col-md-3">
 
       <div>
-        <app-bmcitemlist [name]="'Customer Segments'"></app-bmcitemlist>
+        <app-bmcitemlist [name]="'Customer Segments'" [tasks]="canvasData.customerSegments"></app-bmcitemlist>
       </div>
 
     </div>
@@ -64,7 +66,7 @@
     <div class="col-md-6 br ">
 
       <div>
-        <app-bmcitemlist [name]="'Cost Structure'"></app-bmcitemlist>
+        <app-bmcitemlist [name]="'Cost Structure'" [tasks]="canvasData.costStructure"></app-bmcitemlist>
       </div>
 
     </div>
@@ -72,7 +74,7 @@
     <div class="col-md-6">
       
       <div>
-        <app-bmcitemlist [name]="'Revenue Streams'"></app-bmcitemlist>
+        <app-bmcitemlist [name]="'Revenue Streams'" [tasks]="canvasData.revenueStreams"></app-bmcitemlist>
       </div>
 
     </div>
