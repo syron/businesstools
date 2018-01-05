@@ -2,3 +2,15 @@ h3 {
     text-transform: uppercase;
     font-size: 10pt;
 }
+
+ul {
+    padding-left: 20px;
+}
+
+.panel {
+    margin-bottom: 5px;
+}
+
+.panel-body {
+    padding: 10px;
+}

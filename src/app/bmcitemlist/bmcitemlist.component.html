@@ -1,11 +1,13 @@
 <h3>{{name}}</h3> 
         
-<ul>
-  <li *ngFor="let task of tasks">{{task.title}}</li>
-</ul>
+<div *ngFor="let task of tasks" class="panel panel-default">
+  <div class="panel-body">
+    <span title="{{task.description}}">{{task.title}}</span>
+  </div>
+</div>
 
 
-
+<!-- 
 <button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button>
  
 <ng-template #template>
@@ -18,4 +20,4 @@
   <div class="modal-body">
     This is a modal.
   </div>
-</ng-template>
+</ng-template> -->
