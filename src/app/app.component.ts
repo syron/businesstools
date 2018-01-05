@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BusinesstoolsapiService } from './businesstoolsapi.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
   
-  canvasData = {
+  canvasData: any = {
     keyPartners: [],
     keyActivities: [],
     keyResources: [],
@@ -20,19 +21,9 @@ export class AppComponent {
     revenueStreams: []
   }
 
-  constructor() {
-    this.mockData();
-  }
-
-  mockData() {
-    this.canvasData.channels = [ {title: 'a'}, {title: 'b' }, {title: 'c'}];
-    this.canvasData.costStructure = [{title: 'a'}];
-    this.canvasData.customerRelationships = [{title: 'a'}, {title: 'b' }];
-    this.canvasData.customerSegments = [{title: 'a'}, {title: 'b' }, {title: 'c'}, {title: 'd'}];
-    this.canvasData.keyActivities = [{title: 'a'}, {title: 'b' }, {title: 'c'}];
-    this.canvasData.keyPartners = [{title: 'a'}, {title: 'b' }, {title: 'c'}, {title: 'd'}, {title: 'e'}, {title: 'f'}];
-    this.canvasData.keyResources = [{title: 'a'}, {title: 'b' }, {title: 'c'}, {title: 'd'}];
-    this.canvasData.revenueStreams = [{title: 'a'}, {title: 'b' }, {title: 'c'}];
-    this.canvasData.valuePropositions = [{title: 'a'}, {title: 'b' }, {title: 'c'}, {title: 'd'}, {title: 'e'}, {title: 'f'}];
+  constructor(public businesstoolsapi: BusinesstoolsapiService) {
+    this.businesstoolsapi.getData(1).subscribe(data => {
+      this.canvasData = data;
+    })
   }
 }
