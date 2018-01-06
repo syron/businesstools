@@ -23,8 +23,7 @@ export class BmcitemlistComponent {
     this.selectedTask = task;
   }
 
-  openModal(template: TemplateRef<any>, task: any) {
-    this.selectTask(task);
+  openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
   }
 }
