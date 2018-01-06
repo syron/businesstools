@@ -1,5 +1,7 @@
 # Businesstools
 
+![travis](https://travis-ci.org/syron/businesstools.svg?branch=master)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.2.
 
 ## Description
