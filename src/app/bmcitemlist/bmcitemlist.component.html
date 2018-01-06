@@ -1,23 +1,19 @@
 <h3>{{name}}</h3> <i class="fa fa-plus-circle"></i>
         
 <div *ngFor="let task of tasks" class="panel panel-default">
-  <div class="panel-body">
+  <div class="panel-body clickable" (click)="openModal(template, task)">
     <span title="{{task.description}}">{{task.title}}</span>
   </div>
 </div>
 
-
-<!-- 
-<button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button>
- 
 <ng-template #template>
   <div class="modal-header">
-    <h4 class="modal-title pull-left">Modal</h4>
+    <h4 class="modal-title pull-left">{{name}}: {{selectedTask.title}}</h4>
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-    This is a modal.
+    {{selectedTask.description}}
   </div>
-</ng-template> -->
+</ng-template>

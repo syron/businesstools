@@ -13,12 +13,18 @@ export class BmcitemlistComponent {
   modalRef: BsModalRef;
 
   @Input() name: string;
-  @Input() tasks: Array<string>;
+  @Input() tasks: Array<any>;
+
+  public selectedTask: any;
 
   constructor(private modalService: BsModalService) {}
- 
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+
+  selectTask(task) {
+    this.selectedTask = task;
   }
 
+  openModal(template: TemplateRef<any>, task: any) {
+    this.selectTask(task);
+    this.modalRef = this.modalService.show(template);
+  }
 }
