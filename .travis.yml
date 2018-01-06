@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-   - "7"
+   - "6.11"
 
 branches:
    only:
@@ -8,7 +8,6 @@ branches:
 
 before_script:
    - npm install -g @angular/cli
-   - npm install
 
 script:
    - ng build --prod
