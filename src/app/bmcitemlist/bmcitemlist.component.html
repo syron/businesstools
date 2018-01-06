@@ -1,4 +1,4 @@
-<h3>{{name}}</h3> <i class="fa fa-plus-circle clickable" (click)="openModal(createTaskTemplate)"></i>
+<h3>{{name}} <i class="fa fa-plus-circle clickable pull-right" (click)="openModal(createTaskTemplate)"></i></h3> 
         
 <div *ngFor="let task of tasks" class="panel panel-default">
   <div class="panel-body clickable" (click)="openModal(template); selectTask(task)">
@@ -21,13 +21,30 @@
 </ng-template>
 
 <ng-template #createTaskTemplate>
-    <div class="modal-header">
-      <h4 class="modal-title pull-left">{{name}}: Create new task</h4>
-      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      FORM DATA .... AWESOME
-    </div>
+
+
+    <form>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">{{name}}: Create new task</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+
+            <div class="form-group">
+              <label for="inputTitle">Title</label>
+              <input type="text" class="form-control" id="inputTitle" placeholder="Title">
+            </div>
+            <div class="form-group">
+              <label for="inputDescription">Description</label>
+              <textarea class="form-control" rows="3" id="inputDescription" placeholder="Description"></textarea>
+            </div>
+
+      </div>
+      <div class="modal-footer">
+          <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </form>
   </ng-template>
