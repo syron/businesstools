@@ -13,6 +13,7 @@ export class BmcitemlistComponent {
   modalRef: BsModalRef;
 
   @Input() name: string;
+  @Input() singularName: string;
   @Input() tasks: Array<any>;
 
   public selectedTask: any;

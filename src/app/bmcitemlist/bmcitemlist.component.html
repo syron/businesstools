@@ -8,7 +8,7 @@
 
 <ng-template #template>
   <div class="modal-header">
-    <h4 class="modal-title pull-left">{{name}}: {{selectedTask.title}}</h4>
+    <h4 class="modal-title pull-left">{{name}}: {{selectedTask.title}} <i class="fa fa-pencil" style="padding-left: 5px;" aria-hidden="true"></i></h4>
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -20,12 +20,15 @@
   </div>
 </ng-template>
 
+
+
+
 <ng-template #createTaskTemplate>
 
 
     <form>
       <div class="modal-header">
-        <h4 class="modal-title pull-left">{{name}}: Create new task</h4>
+        <h4 class="modal-title pull-left">Add new <span class="underline">{{singularName}}</span></h4>
         <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
           <span aria-hidden="true">&times;</span>
         </button>

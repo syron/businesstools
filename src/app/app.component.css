@@ -1,17 +1,17 @@
 .br {
-    border-right: 1px solid #000;
+    border-right: 1px solid #ccc;
 }
 
 .bb {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #ccc;
 }
 
 .bl {
-    border-left: 1px solid #000;
+    border-left: 1px solid #ccc;
 }
 
 .bt {
-    border-top: 1px solid #000;
+    border-top: 1px solid #ccc;
 }
 
 .is-table-row {
@@ -23,4 +23,8 @@
     float: none;
     display: table-cell;
     vertical-align: top;
+}
+
+.container-fluid {
+    padding: 0;
 }
