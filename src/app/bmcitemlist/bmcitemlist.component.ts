@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
-
+import { CanvasDataItem } from './../canvas-data-item';
 
 @Component({
   selector: 'app-bmcitemlist',
@@ -14,13 +14,13 @@ export class BmcitemlistComponent {
 
   @Input() name: string;
   @Input() singularName: string;
-  @Input() tasks: Array<any>;
+  @Input() tasks: Array<CanvasDataItem>;
 
-  public selectedTask: any;
+  public selectedTask: CanvasDataItem;
 
   constructor(private modalService: BsModalService) {}
 
-  selectTask(task) {
+  selectTask(task: CanvasDataItem) {
     this.selectedTask = task;
   }
 
