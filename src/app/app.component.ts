@@ -14,6 +14,7 @@ export class AppComponent {
 
   constructor(public businesstoolsapi: BusinesstoolsapiService) {
     this.businesstoolsapi.getData(1).subscribe((data: CanvasData) => {
+      console.log(data);
       this.canvasData = data;
     })
   }
