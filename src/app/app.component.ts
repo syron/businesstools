@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BusinesstoolsapiService } from './businesstoolsapi.service';
+import { CanvasData } from './canvas-data';
 
 @Component({
   selector: 'app-root',
@@ -9,20 +10,10 @@ import { BusinesstoolsapiService } from './businesstoolsapi.service';
 export class AppComponent {
   title = 'app';
   
-  canvasData: any = {
-    keyPartners: [],
-    keyActivities: [],
-    keyResources: [],
-    valuePropositions: [],
-    customerRelationships: [],
-    channels: [],
-    customerSegments: [],
-    costStructure: [],
-    revenueStreams: []
-  }
+  canvasData: CanvasData;
 
   constructor(public businesstoolsapi: BusinesstoolsapiService) {
-    this.businesstoolsapi.getData(1).subscribe(data => {
+    this.businesstoolsapi.getData(1).subscribe((data: CanvasData) => {
       this.canvasData = data;
     })
   }
