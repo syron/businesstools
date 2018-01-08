@@ -1,4 +1,4 @@
-<h3>{{name}} <i class="fa fa-plus-circle clickable pull-right" (click)="openModal(createTaskTemplate)"></i></h3> 
+<h3>{{name}} <i class="fa fa-question-circle-o" title="{{description}}"></i> <i class="fa fa-plus-circle clickable pull-right" (click)="openModal(createTaskTemplate)"></i></h3> 
         
 <div *ngFor="let task of tasks" class="panel panel-default">
   <div class="panel-body clickable" (click)="openModal(template); selectTask(task)">
@@ -44,7 +44,7 @@
 
       </div>
       <div class="modal-footer">
-          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="button" (click)="addItem()" class="btn btn-default">Submit</button>
       </div>
     </form>
   </ng-template>

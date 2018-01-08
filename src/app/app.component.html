@@ -15,21 +15,30 @@
       <div class="col-md-3">
 
         <div>
-          <app-bmcitemlist [name]="'Key Partners'" [singularName]="'Key Partner'" [tasks]="canvasData.keyPartners"></app-bmcitemlist>
+          <app-bmcitemlist  [name]="'Key Partners'" 
+                            [description]="'Key Partners are the relationships that you have with other business, governmental, or non-consumer entities that help your business model work. These can be the relationships that your company has with your suppliers, your manufacturers, business partners, etc. These partnerships that you will undoubtedly create will be forces that help your business succeed in areas that would be inefficient for you to do yourself.'" 
+                            [singularName]="'Key Partner'" 
+                            [tasks]="canvasData.keyPartners"></app-bmcitemlist>
         </div>
 
       </div>
       <!-- Key activities & Key Resources -->
-      <div class="col-md-2 br">
+      <div class="col-md-2 br bl">
 
-        <div class="row bb bl">
+        <div class="row bb">
           <div class="col-xs-12">
-              <app-bmcitemlist [name]="'Key Activities'" [singularName]="'Key Activity'" [tasks]="canvasData.keyActivities"></app-bmcitemlist>
+              <app-bmcitemlist  [name]="'Key Activities'" 
+                                [description]="'Key activities are the most important activities in executing a company’s value proposition. Your Key Activities segment may not require as much getting out of the building. Most of these activities will make themselves apparent as you answer the questions posed by other canvas blocks. Because of this, we spent relatively little time developing our hypotheses here, and unless you’re designing an automated or robotic inventory retrieval system for Amazon or Wal-Mart, likely your Key Activities will develop with your business.'"
+                                [singularName]="'Key Activity'" 
+                                [tasks]="canvasData.keyActivities"></app-bmcitemlist>
           </div>
         </div>
-        <div class="row bl">
+        <div class="row">
           <div class="col-xs-12">
-              <app-bmcitemlist [name]="'Key Resources'"  [singularName]="'Key Resource'"[tasks]="canvasData.keyResources"></app-bmcitemlist>
+              <app-bmcitemlist  [name]="'Key Resources'" 
+                                [description]="''"  
+                                [singularName]="'Key Resource'"
+                                [tasks]="canvasData.keyResources"></app-bmcitemlist>
           </div>
         </div>
         
@@ -38,7 +47,10 @@
       <div class="col-md-2 br">
         
         <div>
-          <app-bmcitemlist [name]="'Value Propositions'" [singularName]="'Value Proposition'" [tasks]="canvasData.valuePropositions"></app-bmcitemlist>
+          <app-bmcitemlist [name]="'Value Propositions'" 
+                           [description]="''"  
+                           [singularName]="'Value Proposition'" 
+                           [tasks]="canvasData.valuePropositions"></app-bmcitemlist>
         </div>
 
       </div>
@@ -47,7 +59,10 @@
 
         <div class="row bb">
           <div class="col-xs-12">
-              <app-bmcitemlist [name]="'Customer Relationships'" [singularName]="'Customer Relationship'" [tasks]="canvasData.customerRelationships"></app-bmcitemlist> 
+              <app-bmcitemlist  [name]="'Customer Relationships'"
+                                [description]="''" 
+                                [singularName]="'Customer Relationship'" 
+                                [tasks]="canvasData.customerRelationships"></app-bmcitemlist> 
           </div>
         </div>
         <div class="row ">
