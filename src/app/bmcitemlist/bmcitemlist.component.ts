@@ -47,11 +47,15 @@ export class BmcitemlistComponent {
       return;
     }
 
-    // are you sure
-
-    var index = this.tasks.indexOf(task);
-    this.tasks.splice(index, 1);
-
-    this.hideModal();
+    // are you sure confirm...
+    var r = confirm("Are you sure?");
+    if (r == true) {
+      var index = this.tasks.indexOf(task);
+      this.tasks.splice(index, 1);
+  
+      this.hideModal();
+    } else {
+        
+    }
   }
 }
