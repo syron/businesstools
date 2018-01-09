@@ -30,10 +30,28 @@ export class BmcitemlistComponent {
     this.modalRef = this.modalService.show(template);
   }
 
+  hideModal() {
+    this.modalRef.hide();
+    this.selectTask(null);
+  }
+
   addItem() {
     this.businesstoolsapi.addItem(1).subscribe((data: CanvasDataItem) => { 
       this.tasks.push(data);
-      this.modalRef.hide();
+      this.hideModal();
     });
+  }
+
+  removeItem(task) {
+    if (task == null) {
+      return;
+    }
+
+    // are you sure
+
+    var index = this.tasks.indexOf(task);
+    this.tasks.splice(index, 1);
+
+    this.hideModal();
   }
 }
