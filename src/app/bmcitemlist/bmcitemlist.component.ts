@@ -33,6 +33,7 @@ export class BmcitemlistComponent {
   addItem() {
     this.businesstoolsapi.addItem(1).subscribe((data: CanvasDataItem) => { 
       this.tasks.push(data);
+      this.modalRef.hide();
     });
   }
 }
