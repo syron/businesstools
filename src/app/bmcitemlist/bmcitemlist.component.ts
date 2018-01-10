@@ -3,6 +3,7 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { CanvasDataItem } from './../canvas-data-item';
 import { BusinesstoolsapiService } from '../businesstoolsapi.service';
+import { CanvasCategory } from '../canvas-category';
 
 @Component({
   selector: 'app-bmcitemlist',
@@ -13,10 +14,7 @@ export class BmcitemlistComponent {
 
   modalRef: BsModalRef;
 
-  @Input() name: string;
-  @Input() description: string;
-  @Input() singularName: string;
-  @Input() tasks: Array<CanvasDataItem>;
+  @Input() data: CanvasCategory;
 
   public selectedTask: CanvasDataItem;
 
@@ -37,7 +35,7 @@ export class BmcitemlistComponent {
 
   addItem() {
     this.businesstoolsapi.addItem(1).subscribe((data: CanvasDataItem) => { 
-      this.tasks.push(data);
+      this.data.items.push(data);
       this.hideModal();
     });
   }
@@ -47,11 +45,10 @@ export class BmcitemlistComponent {
       return;
     }
 
-    // are you sure confirm...
     var r = confirm("Are you sure?");
     if (r == true) {
-      var index = this.tasks.indexOf(task);
-      this.tasks.splice(index, 1);
+      var index = this.data.items.indexOf(task);
+      this.data.items.splice(index, 1);
   
       this.hideModal();
     } else {
