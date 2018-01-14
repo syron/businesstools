@@ -13,8 +13,15 @@ export class AppComponent {
   canvasData: CanvasData;
 
   constructor(public businesstoolsapi: BusinesstoolsapiService) {
-    this.businesstoolsapi.getData(1).subscribe((data: CanvasData) => {
+    this.businesstoolsapi.getBusinessModelCanvas("5a5b621e47d3c10a187153fb").subscribe((data: CanvasData) => {
       this.canvasData = data;
+    });
+  }
+
+  saveCanvas() {
+    console.log(this.canvasData);
+    this.businesstoolsapi.saveBusinesssModelCanvas(this.canvasData).subscribe((data: boolean) => {
+      console.log(data);
     });
   }
 }

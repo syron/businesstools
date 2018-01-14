@@ -6,10 +6,16 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class BusinesstoolsapiService {
 
+  baseAddress: string = 'http://localhost:5000/api/';
+
   constructor(private http: HttpClient) { }
 
-  public getData(id: number): Observable<Object> {
-    return this.http.get('http://localhost:10010/bmc/' + id.toString());
+  public getBusinessModelCanvasList(): Observable<Object> {
+    return this.http.get(this.baseAddress + 'businessmodelcanvas/');
+  }
+
+  public getBusinessModelCanvas(id: string): Observable<Object> {
+    return this.http.get(this.baseAddress + 'businessmodelcanvas/' + id);
   }
 
   public addItem(id: number): Observable<Object> {
@@ -20,5 +26,11 @@ export class BusinesstoolsapiService {
       headers: contentHeaders
       , responseType: 'json'
     } );
+  }
+
+  public saveBusinesssModelCanvas(data: CanvasData): Observable<Object> {
+    var url = this.baseAddress + 'businessmodelcanvas/' + data.canvasId;
+    console.log(url, data);
+    return this.http.patch(url, data);
   }
 }

@@ -2,7 +2,8 @@ import { CanvasDataItem } from './canvas-data-item';
 import { CanvasCategory } from './canvas-category';
 
 export class CanvasData {
-    public id: number;
+    public _id: any;
+    public canvasId: string;
     public name: string;
     public designedFor: string;
     public keyResources: CanvasCategory;

@@ -17,6 +17,7 @@ export class BmcitemlistComponent {
   @Input() data: CanvasCategory;
 
   public selectedTask: CanvasDataItem;
+  public itemToAdd: CanvasDataItem;
 
   constructor(private modalService: BsModalService, public businesstoolsapi: BusinesstoolsapiService) {}
 
@@ -33,11 +34,15 @@ export class BmcitemlistComponent {
     this.selectTask(null);
   }
 
-  addItem() {
-    this.businesstoolsapi.addItem(1).subscribe((data: CanvasDataItem) => { 
-      this.data.items.push(data);
-      this.hideModal();
-    });
+  addItem(template: TemplateRef<any>) {
+    this.itemToAdd = new CanvasDataItem();
+    this.itemToAdd.order = 1000;
+    this.itemToAdd.created = "2018-01-01T00:00:00.001";
+    this.openModal(template);
+  }
+
+  addItemSubmit() {
+    this.data.items.push(this.itemToAdd);
   }
 
   removeItem(task) {
