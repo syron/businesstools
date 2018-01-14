@@ -14,6 +14,7 @@ export class BmcitemlistComponent {
 
   modalRef: BsModalRef;
 
+  @Input() meta: any;
   @Input() data: CanvasCategory;
 
   public selectedTask: CanvasDataItem;

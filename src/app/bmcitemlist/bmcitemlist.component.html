@@ -1,4 +1,4 @@
-<h3>{{data.name}} <i class="fa fa-question-circle-o" title="{{data.description}}"></i> <i class="fa fa-plus-circle clickable pull-right" (click)="addItem(createTaskTemplate)"></i></h3> 
+<h3>{{meta.Name}} <i class="fa fa-question-circle-o" title="{{meta.Description}}"></i> <i class="fa fa-plus-circle clickable pull-right" (click)="addItem(createTaskTemplate)"></i></h3> 
         
 <div *ngFor="let task of data.items" class="panel panel-default">
   <div class="panel-body clickable" (click)="selectTask(task); openModal(template)">

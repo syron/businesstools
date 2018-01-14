@@ -17,7 +17,7 @@
       <div class="col-md-3">
 
         <div>
-          <app-bmcitemlist [data]="canvasData.keyPartners"></app-bmcitemlist>
+          <app-bmcitemlist [meta]="categories.keyPartners" [data]="canvasData.keyPartners"></app-bmcitemlist>
         </div>
 
       </div>
@@ -26,13 +26,12 @@
 
         <div class="row bb">
           <div class="col-xs-12">
-              <app-bmcitemlist [data]="canvasData.keyActivities"></app-bmcitemlist>
+              <app-bmcitemlist [meta]="categories.keyActivities" [data]="canvasData.keyActivities"></app-bmcitemlist>
           </div>
         </div>
         <div class="row">
           <div class="col-xs-12">
-              <app-bmcitemlist 
-                                [data]="canvasData.keyResources"></app-bmcitemlist>
+              <app-bmcitemlist [meta]="categories.keyResources" [data]="canvasData.keyResources"></app-bmcitemlist>
           </div>
         </div>
         
@@ -41,8 +40,7 @@
       <div class="col-md-2 br">
         
         <div>
-          <app-bmcitemlist 
-                           [data]="canvasData.valuePropositions"></app-bmcitemlist>
+          <app-bmcitemlist [meta]="categories.valuePropositions" [data]="canvasData.valuePropositions"></app-bmcitemlist>
         </div>
 
       </div>
@@ -51,13 +49,12 @@
 
         <div class="row bb">
           <div class="col-xs-12">
-              <app-bmcitemlist 
-                                [data]="canvasData.customerRelationships"></app-bmcitemlist> 
+              <app-bmcitemlist [meta]="categories.customerRelationships" [data]="canvasData.customerRelationships"></app-bmcitemlist> 
           </div>
         </div>
         <div class="row ">
           <div class="col-xs-12">
-            <app-bmcitemlist [data]="canvasData.channels"></app-bmcitemlist>
+            <app-bmcitemlist [meta]="categories.channels" [data]="canvasData.channels"></app-bmcitemlist>
           </div>
         </div>
 
@@ -66,7 +63,7 @@
       <div class="col-md-3">
 
         <div>
-          <app-bmcitemlist [data]="canvasData.customerSegments"></app-bmcitemlist>
+          <app-bmcitemlist [meta]="categories.customerSegments" [data]="canvasData.customerSegments"></app-bmcitemlist>
         </div>
 
       </div>
@@ -78,7 +75,7 @@
       <div class="col-md-6 br ">
 
         <div>
-          <app-bmcitemlist [data]="canvasData.costStructure"></app-bmcitemlist>
+          <app-bmcitemlist [meta]="categories.costStructures" [data]="canvasData.costStructure"></app-bmcitemlist>
         </div>
 
       </div>
@@ -86,7 +83,7 @@
       <div class="col-md-6">
         
         <div>
-          <app-bmcitemlist [data]="canvasData.revenueStreams"></app-bmcitemlist>
+          <app-bmcitemlist [meta]="categories.revenueStreams" [data]="canvasData.revenueStreams"></app-bmcitemlist>
         </div>
 
       </div>
