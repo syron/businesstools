@@ -8,7 +8,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let canvas of canvasList">
-      <td>{{canvas.name}}</td>
+      <td><a [routerLink]="['/businessmodelcanvas', canvas.canvasId]" routerLinkActive="active">{{canvas.name}}</a></td>
       <td>{{canvas.designedFor}}</td>
       <td></td>
     </tr>
