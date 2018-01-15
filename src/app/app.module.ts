@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 import { BmcitemlistComponent } from './bmcitemlist/bmcitemlist.component';
 import { BusinesstoolsapiService } from './businesstoolsapi.service';
 import { BusinessmodelcanvasComponent } from './businessmodelcanvas/businessmodelcanvas.component';
+import { BusinessmodellistComponent } from './businessmodellist/businessmodellist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BmcitemlistComponent,
-    BusinessmodelcanvasComponent
+    BusinessmodelcanvasComponent,
+    BusinessmodellistComponent
   ],
   imports: [
     BrowserModule,
