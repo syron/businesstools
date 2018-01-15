@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CanvasData } from './canvas-data'
 import { Observable } from 'rxjs/Observable';
-import { Response } from '_debugger';
 
 @Injectable()
 export class BusinesstoolsapiService {
