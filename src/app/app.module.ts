@@ -9,11 +9,13 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BmcitemlistComponent } from './bmcitemlist/bmcitemlist.component';
 import { BusinesstoolsapiService } from './businesstoolsapi.service';
+import { BusinessmodelcanvasComponent } from './businessmodelcanvas/businessmodelcanvas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BmcitemlistComponent
+    BmcitemlistComponent,
+    BusinessmodelcanvasComponent
   ],
   imports: [
     BrowserModule,
