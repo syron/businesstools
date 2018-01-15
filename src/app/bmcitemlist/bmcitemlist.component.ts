@@ -44,9 +44,10 @@ export class BmcitemlistComponent {
 
   addItemSubmit() {
     this.data.items.push(this.itemToAdd);
+    this.hideModal();
   }
 
-  removeItem(task) {
+  removeItemSubmit(task) {
     if (task == null) {
       return;
     }
