@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CanvasData } from './canvas-data'
 import { Observable } from 'rxjs/Observable';
+import { Response } from '_debugger';
 
 @Injectable()
 export class BusinesstoolsapiService {
@@ -11,11 +12,11 @@ export class BusinesstoolsapiService {
   constructor(private http: HttpClient) { }
 
   public getBusinessModelCanvasList(): Observable<Object> {
-    return this.http.get(this.baseAddress + 'businessmodelcanvas/');
+    return this.http.get<Array<CanvasData>>(this.baseAddress + 'businessmodelcanvas/');
   }
 
-  public getBusinessModelCanvas(id: string): Observable<Object> {
-    return this.http.get(this.baseAddress + 'businessmodelcanvas/' + id);
+  public getBusinessModelCanvas(id: string): Observable<CanvasData> {
+    return this.http.get<CanvasData>(this.baseAddress + 'businessmodelcanvas/' + id);
   }
 
   public addItem(id: number): Observable<Object> {

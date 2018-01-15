@@ -1,17 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { CanvasData } from '../canvas-data';
 import { BusinesstoolsapiService } from '../businesstoolsapi.service';
+import { ActivatedRoute } from '@angular/router';
+import 'rxjs/add/operator/switchMap';
+import { Observable } from 'rxjs/Observable';
+import { ParamMap } from '@angular/router/src/shared';
 
 @Component({
   selector: 'app-businessmodelcanvas',
   templateUrl: './businessmodelcanvas.component.html',
   styleUrls: ['./businessmodelcanvas.component.css']
 })
-export class BusinessmodelcanvasComponent {
+export class BusinessmodelcanvasComponent implements OnInit {
 
   title = 'app';
   
+  canvasData$: Observable<CanvasData>;
   canvasData: CanvasData;
+  selectedId: string;
+
   categories: any = {
     keyPartners: {
       "Name" : "Key Partners",
@@ -60,8 +67,17 @@ export class BusinessmodelcanvasComponent {
     }
   };
 
-  constructor(public businesstoolsapi: BusinesstoolsapiService) {
-    this.businesstoolsapi.getBusinessModelCanvas("5a5b621e47d3c10a187153fb").subscribe((data: CanvasData) => {
+  constructor(public businesstoolsapi: BusinesstoolsapiService, private route: ActivatedRoute) {
+    
+  }
+
+  ngOnInit() {
+    this.canvasData$ = this.route.paramMap.switchMap((params: ParamMap) => {
+      this.selectedId = params.get('id');
+      return this.businesstoolsapi.getBusinessModelCanvas(this.selectedId);
+    });
+
+    this.canvasData$.subscribe(data => {
       this.canvasData = data;
     });
   }
