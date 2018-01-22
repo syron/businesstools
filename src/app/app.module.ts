@@ -12,10 +12,16 @@ import { BmcitemlistComponent } from './bmcitemlist/bmcitemlist.component';
 import { BusinesstoolsapiService } from './businesstoolsapi.service';
 import { BusinessmodelcanvasComponent } from './businessmodelcanvas/businessmodelcanvas.component';
 import { BusinessmodellistComponent } from './businessmodellist/businessmodellist.component';
+import { AuthService } from './auth.service';
+import { CallbackComponent } from './callback/callback.component';
+import { HomeComponent } from './home/home.component';
+
 
 const appRoutes: Routes = [
   { path: 'businessmodelcanvas', component: BusinessmodellistComponent },
   { path: 'businessmodelcanvas/:id',      component: BusinessmodelcanvasComponent },
+  { path: 'callback', component: CallbackComponent },
+  { path: 'home', component: HomeComponent },
   { path: '',
     redirectTo: '/businessmodelcanvas',
     pathMatch: 'full'
@@ -29,7 +35,9 @@ const appRoutes: Routes = [
     AppComponent,
     BmcitemlistComponent,
     BusinessmodelcanvasComponent,
-    BusinessmodellistComponent
+    BusinessmodellistComponent,
+    CallbackComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +48,7 @@ const appRoutes: Routes = [
     ModalModule.forRoot(),
     HttpClientModule
   ],
-  providers: [BusinesstoolsapiService],
+  providers: [BusinesstoolsapiService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

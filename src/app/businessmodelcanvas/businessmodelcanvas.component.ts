@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
 import { ParamMap } from '@angular/router/src/shared';
+import { HttpEvent } from '@angular/common/http/src/response';
 
 @Component({
   selector: 'app-businessmodelcanvas',
@@ -84,7 +85,7 @@ export class BusinessmodelcanvasComponent implements OnInit {
 
   saveCanvas() {
     console.log(this.canvasData);
-    this.businesstoolsapi.saveBusinesssModelCanvas(this.canvasData).subscribe((data: boolean) => {
+    this.businesstoolsapi.updateBusinesssModelCanvas(this.canvasData).subscribe((data: boolean) => {
       console.log(data);
     });
   }

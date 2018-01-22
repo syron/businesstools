@@ -43,6 +43,9 @@ export class BmcitemlistComponent {
   }
 
   addItemSubmit() {
+    if (this.data.items == null) 
+      this.data.items = new Array<CanvasDataItem>();
+      
     this.data.items.push(this.itemToAdd);
     this.hideModal();
   }

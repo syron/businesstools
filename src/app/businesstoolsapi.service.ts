@@ -2,35 +2,35 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CanvasData } from './canvas-data'
 import { Observable } from 'rxjs/Observable';
+import { HttpEvent, HttpHeaderResponse } from '@angular/common/http/src/response';
+import { AuthService } from './auth.service';
+import { environment } from '../environments/environment';
 
 @Injectable()
 export class BusinesstoolsapiService {
 
-  baseAddress: string = 'http://localhost:5000/api/';
+  baseAddress: string = environment.apiEndpoint;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private auth: AuthService) { }
 
-  public getBusinessModelCanvasList(): Observable<Object> {
-    return this.http.get<Array<CanvasData>>(this.baseAddress + 'businessmodelcanvas/');
+  private get authHeader(): HttpHeaders {
+    return new HttpHeaders().set('Authorization', 'Bearer ' + this.auth.getAccessToken());
+  }
+
+  public getBusinessModelCanvasList(): Observable<Array<CanvasData>> {
+    return this.http.get<Array<CanvasData>>(this.baseAddress + 'businessmodelcanvas/', { headers: this.authHeader });
   }
 
   public getBusinessModelCanvas(id: string): Observable<CanvasData> {
-    return this.http.get<CanvasData>(this.baseAddress + 'businessmodelcanvas/' + id);
+    return this.http.get<CanvasData>(this.baseAddress + 'businessmodelcanvas/' + id, { headers: this.authHeader });
   }
 
-  public addItem(id: number): Observable<Object> {
-    var contentHeaders = new HttpHeaders();
-    contentHeaders.append('Accept', 'application/json');
-    contentHeaders.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:10010/bmc/' + id.toString() + '/items', { }, {
-      headers: contentHeaders
-      , responseType: 'json'
-    } );
-  }
-
-  public saveBusinesssModelCanvas(data: CanvasData): Observable<Object> {
+  public updateBusinesssModelCanvas(data: CanvasData): Observable<Object> {
     var url = this.baseAddress + 'businessmodelcanvas/' + data.canvasId;
-    console.log(url, data);
-    return this.http.patch(url, data);
+    return this.http.patch(url, data, { headers: this.authHeader });
+  }
+
+  public addBusinessModelCanvas(data: CanvasData): Observable<Boolean> {
+    return this.http.post<Boolean>(this.baseAddress + 'businessmodelcanvas/', data, { headers: this.authHeader });
   }
 }

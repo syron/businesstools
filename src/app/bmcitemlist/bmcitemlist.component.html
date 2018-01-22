@@ -24,31 +24,31 @@
 </ng-template>
 
 <ng-template #createTaskTemplate>
-    <form>
-      <div class="modal-header">
-        <h4 class="modal-title pull-left">Add new <span class="underline">{{singularName}}</span></h4>
+  <form>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Add new <span class="underline">{{singularName}}</span></h4>
 
-        <span class="pull-right"> 
-          <i class="fa fa-close clickable"(click)="hideModal()"></i>
-        </span>
+      <span class="pull-right"> 
+        <i class="fa fa-close clickable"(click)="hideModal()"></i>
+      </span>
+    </div>
+    <div class="modal-body">
+  
+      <div class="form-group">
+        <label for="addItemTitle">Title</label>
+        <input type="text" name="addItemTitle" class="form-control" [(ngModel)]="itemToAdd.title" id="addItemTitle" placeholder="Title">
       </div>
-      <div class="modal-body">
-    
-        <div class="form-group">
-          <label for="addItemTitle">Title</label>
-          <input type="text" name="addItemTitle" class="form-control" [(ngModel)]="itemToAdd.title" id="addItemTitle" placeholder="Title">
-        </div>
-        <div class="form-group">
-          <label for="addItemDescription">Description</label>
-          <textarea class="form-control" rows="3" name="addItemDescription" [(ngModel)]="itemToAdd.description" id="addItemDescription" placeholder="Description"></textarea>
-        </div>
+      <div class="form-group">
+        <label for="addItemDescription">Description</label>
+        <textarea class="form-control" rows="3" name="addItemDescription" [(ngModel)]="itemToAdd.description" id="addItemDescription" placeholder="Description"></textarea>
+      </div>
 
-      </div>
-      <div class="modal-footer">
-          <button type="button" (click)="addItemSubmit()" class="btn btn-default">Submit</button>
-      </div>
-    </form>
-  </ng-template>
+    </div>
+    <div class="modal-footer">
+        <button type="button" (click)="addItemSubmit()" class="btn btn-default">Submit</button>
+    </div>
+  </form>
+</ng-template>
 
 
   <ng-template #editTaskTemplate>
