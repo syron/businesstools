@@ -40,3 +40,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Added environment.ts to support local development credentials that are secret.
+environment.ts
