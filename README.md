@@ -12,7 +12,8 @@ This project requires this api mock to run: https://github.com/syron/businesstoo
 
 Create an environments file 'environment.ts' in /src/environments/ in order to run the app on your local machine and paste in the following. Replace all the empty values. 
 
-`export const environment = {
+```
+export const environment = {
   production: false,
   apiEndpoint: '',
   auth0: {
@@ -21,4 +22,5 @@ Create an environments file 'environment.ts' in /src/environments/ in order to r
     audience: '',
     redirectUri: ''
   }
-};`
+};
+```
