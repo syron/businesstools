@@ -18,28 +18,26 @@
 </table>
 
 <ng-template #createTaskTemplate>
-    <form *ngIf="itemToAdd != null">
-      <div class="modal-header">
-        <h4 class="modal-title pull-left">Add new <span class="underline">Business Model Canvas</span></h4>
-  
-        <span class="pull-right"> 
-          <i class="fa fa-close clickable"(click)="hideModal()"></i>
-        </span>
+  <form *ngIf="itemToAdd != null">
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Add new <span class="underline">Business Model Canvas</span></h4>
+
+      <span class="pull-right"> 
+        <i class="fa fa-close clickable"(click)="hideModal()"></i>
+      </span>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="addItemName">What should the name of the canvas be?</label>
+        <input type="text" name="addItemName" class="form-control" [(ngModel)]="itemToAdd.name" id="addItemName" placeholder="What should the name of the canvas be?">
       </div>
-      <div class="modal-body">
-    
-        <div class="form-group">
-          <label for="addItemName">What should the name of the canvas be?</label>
-          <input type="text" name="addItemName" class="form-control" [(ngModel)]="itemToAdd.name" id="addItemName" placeholder="What should the name of the canvas be?">
-        </div>
-        <div class="form-group">
-          <label for="addItemDesignedFor">For which company do you design this for?</label>
-          <input type="text" name="addItemDesignedFor" class="form-control" [(ngModel)]="itemToAdd.designedFor" id="addItemDesignedFor" placeholder="For which company do you design this for?">
-        </div>
-  
+      <div class="form-group">
+        <label for="addItemDesignedFor">For which company do you design this for?</label>
+        <input type="text" name="addItemDesignedFor" class="form-control" [(ngModel)]="itemToAdd.designedFor" id="addItemDesignedFor" placeholder="For which company do you design this for?">
       </div>
-      <div class="modal-footer">
-          <button type="button" (click)="addItemSubmit()" class="btn btn-default">Submit</button>
-      </div>
-    </form>
-  </ng-template>
+    </div>
+    <div class="modal-footer">
+        <a (click)="addItemSubmit()" class="btn btn-primary"><i class></i> Submit</a>
+    </div>
+  </form>
+</ng-template>
