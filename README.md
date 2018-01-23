@@ -10,9 +10,11 @@ This project requires this api mock to run: https://github.com/syron/businesstoo
 
 ## Get Started
 
+### 1. Create environment file
+
 Create an environments file 'environment.ts' in /src/environments/ in order to run the app on your local machine and paste in the following. Replace all the empty values. 
 
-```
+```json
 export const environment = {
   production: false,
   apiEndpoint: '',
@@ -24,3 +26,11 @@ export const environment = {
   }
 };
 ```
+
+### 2. Run angular app
+
+Execute the following command `ng serve` and redirect your browser to the displayed url in your command line tool, e.g. `http://localhost:4200/`.
+
+### 3. Enjoy
+
+Enjoy creating your Business Model Canvas tool.
