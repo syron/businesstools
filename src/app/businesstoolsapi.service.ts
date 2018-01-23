@@ -33,4 +33,8 @@ export class BusinesstoolsapiService {
   public addBusinessModelCanvas(data: CanvasData): Observable<Boolean> {
     return this.http.post<Boolean>(this.baseAddress + 'businessmodelcanvas/', data, { headers: this.authHeader });
   }
+
+  public deleteBusinessModelCanvas(id: string): Observable<Boolean> {
+    return this.http.delete<Boolean>(this.baseAddress + 'businessmodelcanvas/' + id, { headers: this.authHeader });
+  }
 }

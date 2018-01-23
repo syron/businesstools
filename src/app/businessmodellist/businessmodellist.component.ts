@@ -61,6 +61,26 @@ export class BusinessmodellistComponent implements OnInit {
     });
   }
 
+  deleteItem(id: string) {
+    var r = confirm("Are you sure?");
+    if (r == true) {
+      this.businesstoolsapi.deleteBusinessModelCanvas(id).subscribe((data: Boolean) => {
+        if (data) {
+          var _self = this;
+          this.updateList(function() {
+            _self.hideModal();
+          });
+        }
+        else {
+          alert('Did not work to save...');
+        }
+      });
+  
+    } else {
+        
+    }
+  }
+
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
   }

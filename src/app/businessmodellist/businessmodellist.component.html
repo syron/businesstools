@@ -12,7 +12,7 @@
     <tr *ngFor="let canvas of canvasList">
       <td><a [routerLink]="['/businessmodelcanvas', canvas.canvasId]" routerLinkActive="active">{{canvas.name}}</a></td>
       <td>{{canvas.designedFor}}</td>
-      <td></td>
+      <td><a class="btn btn-danger" (click)="deleteItem(canvas.canvasId)"><i class="fa fa-trash-o"></i></a></td>
     </tr>
   </tbody>
 </table>
