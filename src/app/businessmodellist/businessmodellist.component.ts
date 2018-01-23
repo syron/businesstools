@@ -22,9 +22,7 @@ export class BusinessmodellistComponent implements OnInit {
             , private auth: AuthService
             , public router: Router) {
     if (this.auth.isAuthenticated()) {
-      this.businesstoolsapi.getBusinessModelCanvasList().subscribe((data: Array<CanvasData>) => {
-        this.canvasList = data;
-      });
+      this.updateList();
     }
     else {
       this.router.navigate(['/home']);
@@ -32,6 +30,16 @@ export class BusinessmodellistComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  updateList(onDataGet?: any) {
+    this.businesstoolsapi.getBusinessModelCanvasList().subscribe((data: Array<CanvasData>) => {
+      this.canvasList = data;
+
+      if (typeof onDataGet !== typeof undefined) {
+        onDataGet();
+      }
+    });
   }
 
   openAddItemModal(template: TemplateRef<any>) {
@@ -45,8 +53,11 @@ export class BusinessmodellistComponent implements OnInit {
         alert('Did not work to save...');
       }
       
-      this.hideModal();
-      this.itemToAdd = null;
+      var _self = this;
+      this.updateList(function() {
+        _self.hideModal();
+        _self.itemToAdd = null;
+      });
     });
   }
 
@@ -57,5 +68,4 @@ export class BusinessmodellistComponent implements OnInit {
   hideModal() {
     this.modalRef.hide();
   }
-
 }

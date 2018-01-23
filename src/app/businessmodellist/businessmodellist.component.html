@@ -18,7 +18,7 @@
 </table>
 
 <ng-template #createTaskTemplate>
-    <form>
+    <form *ngIf="itemToAdd != null">
       <div class="modal-header">
         <h4 class="modal-title pull-left">Add new <span class="underline">BMC</span></h4>
   
