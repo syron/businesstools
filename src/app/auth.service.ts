@@ -13,8 +13,9 @@ export class AuthService {
     responseType: 'token id_token',
     audience: environment.auth0.audience,
     redirectUri: environment.auth0.redirectUri,
-    scope: 'openid'
+    scope: 'openid profile'
   });
+  userProfile: any = null;
 
   constructor(public router: Router) {}
 
@@ -28,8 +29,23 @@ export class AuthService {
         window.location.hash = '';
         this.setSession(authResult);
         this.router.navigate(['/']);
+ 
       } else if (err) {
         this.router.navigate(['/']);
+      }
+    });
+  }
+
+  public getProfile(): void {
+    const accessToken = localStorage.getItem('access_token');
+    if (!accessToken) {
+      throw new Error('Access token must exist to fetch profile');
+    }
+  
+    const self = this;
+    this.auth0.client.userInfo(accessToken, (err, profile) => {
+      if (profile) {
+        self.userProfile = profile;
       }
     });
   }
@@ -40,6 +56,10 @@ export class AuthService {
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
+  }
+
+  public getIdToken(): string {
+    return localStorage.getItem('id_token');
   }
 
   public getAccessToken(): string {

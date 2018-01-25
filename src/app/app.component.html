@@ -33,6 +33,7 @@
 
       <ul class="nav navbar-nav navbar-right">
         <li *ngIf="!auth.isAuthenticated()"><a class="btn btn-link" (click)="auth.login()"><i class="fa fa-sign-in"></i> Login / Sign Up</a></li>
+        <li *ngIf="auth.isAuthenticated() && auth.userProfile != null"><a class="btn btn-link">Hello {{auth.userProfile.name}}</a></li>
         <li *ngIf="auth.isAuthenticated()"><a class="btn btn-link" (click)="auth.logout()"><i class="fa fa-sign-out"></i> Logout</a></li>
       </ul>
       <!-- <ul class="nav navbar-nav navbar-right">
